@@ -72,19 +72,6 @@ export default function Docs() {
             </p>
             </CardContent>
         </Card>
-        <section className="space-y-6">
-            <h2 className="text-3xl font-semibold">Key Features</h2>
-            <div className="space-y-4">
-            <Badge className="px-3 py-2">OAuth Login</Badge>
-            <p>Users can log in using Google or GitHub, implemented with Supabase’s OAuth capabilities.</p>
-
-            <Badge className="px-3 py-2">Post Viewing & Interactions</Badge>
-            <p>Users can view posts, like them, and repost them. Each post contains a title, content, optional image, and counters for likes and reposts.</p>
-
-            <Badge className="px-3 py-2">Post Creation</Badge>
-            <p>Users can create new posts with HTML content, and optional images, stored securely in Supabase.</p>
-            </div>
-        </section>
         <Card className="shadow-lg">
             <CardHeader>
             <CardTitle className="text-2xl font-semibold">Deployment</CardTitle>
