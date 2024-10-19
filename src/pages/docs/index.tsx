@@ -85,6 +85,32 @@ export default function Docs() {
             <p>Users can create new posts with HTML content, and optional images, stored securely in Supabase.</p>
             </div>
         </section>
+        <Card className="shadow-lg">
+            <CardHeader>
+            <CardTitle className="text-2xl font-semibold">Deployment</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+            <p>
+                The project is deployed using <strong>Vercel</strong>, which offers seamless integration with GitHub. This allows for automatic deployments on every push to the main branch, ensuring that the latest changes are always live.
+            </p>
+            <p>
+                <strong>Why I chose it:</strong> Vercel provides a hassle-free deployment process with features like automatic SSL, custom domains, and serverless functions. Its ability to handle deployments automatically on git push reduces manual intervention and speeds up the development workflow.
+            </p>
+            </CardContent>
+        </Card>
+        <section className="space-y-6">
+            <h2 className="text-3xl font-semibold">Key Features</h2>
+            <div className="space-y-4">
+            <Badge className="px-3 py-2">OAuth Login</Badge>
+            <p>Users can log in using Google or GitHub, implemented with Supabase’s OAuth capabilities.</p>
+
+            <Badge className="px-3 py-2">Post Viewing & Interactions</Badge>
+            <p>Users can view posts, like them, and repost them. Each post contains a title, content, optional image, and counters for likes and reposts.</p>
+
+            <Badge className="px-3 py-2">Post Creation</Badge>
+            <p>Users can create new posts with HTML content, and optional images, stored securely in Supabase.</p>
+            </div>
+        </section>
         </div>
     </>
   );
