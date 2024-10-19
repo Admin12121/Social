@@ -6,6 +6,7 @@ import Spinner from "@/components/ui/spinner";
 import Feed from "@/pages/main/index"
 import Login from "@/pages/auth/login";
 import { PostsProvider } from "./pages/main/_components/postProvider";
+import Docs from "@/pages/docs";
 
 function App() {
 
@@ -16,7 +17,7 @@ function App() {
           <Route path="login" element={<Login/>}/>
           <Route index element={ <Feed /> } >
           </Route>
-          <Route path="docs" element={<></>}/>
+          <Route path="docs" element={<Docs/>}/>
           <Route path="*" element={<Pagenotfound />} />
         </Routes>
     ),
