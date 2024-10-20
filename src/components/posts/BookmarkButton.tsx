@@ -6,9 +6,10 @@ import { toast } from "sonner";
 
 interface BookmarkButtonProps {
   postId?: string;
+  count?: number;
 }
 
-export default function BookmarkButton({ postId }: BookmarkButtonProps) {
+export default function BookmarkButton({ postId, count }: BookmarkButtonProps) {
   const [user, setUser] = useState<any>({});
 
   useEffect(() => {
@@ -36,6 +37,7 @@ export default function BookmarkButton({ postId }: BookmarkButtonProps) {
   };
   return (
     <button onClick={()=>rePost()} className="flex items-center gap-2">
+      {count && count >= 1 ? count : ''}
       <Share2 className={cn("size-5")} />
     </button>
   );

@@ -46,8 +46,8 @@ export default function ForYouFeed(profile: Profile) {
         setLoading(true);
 
         const { data: newPosts, error: postsError } = await supabase
-          .from('Posts')
-          .select(`*, profiles (id, email, full_name, picture)`)
+          .from('content')
+          .select(`*`)
           .eq('created_by', userEmail)
           .order('created_at', { ascending: false })
           .range(pageParam * 5, (pageParam + 1) * 5 - 1);

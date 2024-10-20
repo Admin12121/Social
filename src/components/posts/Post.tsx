@@ -76,7 +76,7 @@ export default function Post({ post }: PostProps) {
         <div className="flex items-center gap-5">
           <LikeButton postId={post.id} initialState={post.like_count} />
         </div>
-        <BookmarkButton postId={post.id} />
+        <BookmarkButton postId={post.id} count={post?.repost_count}/>
       </div>
     </article>
   );
