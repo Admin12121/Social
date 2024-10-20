@@ -4,9 +4,11 @@ import Pagenotfound from "@/pages/empty/pagenotfound";
 import { Toaster } from "sonner";
 import Spinner from "@/components/ui/spinner";
 import Feed from "@/pages/main/index"
+import Content from "@/pages/main/Feed"
 import Login from "@/pages/auth/login";
 import { PostsProvider } from "./pages/main/_components/postProvider";
 import Docs from "@/pages/docs";
+import Profile from "@/pages/profile";
 
 function App() {
 
@@ -14,7 +16,9 @@ function App() {
     () => (
         <Routes>
           <Route path="login" element={<Login/>}/>
-          <Route index element={ <Feed /> } >
+          <Route path="/" element={ <Feed/> } >
+            <Route index element={<Content/>}/>
+            <Route path="users/:id" element={<Profile/>}/>
           </Route>
           <Route path="docs" element={<Docs/>}/>
           <Route path="*" element={<Pagenotfound />} />

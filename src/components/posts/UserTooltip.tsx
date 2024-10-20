@@ -15,6 +15,7 @@ interface UserTooltipProps extends PropsWithChildren {
 }
 
 export default function UserTooltip({ children, user }: UserTooltipProps) {
+
   return (
     <TooltipProvider>
       <Tooltip>
@@ -22,19 +23,19 @@ export default function UserTooltip({ children, user }: UserTooltipProps) {
         <TooltipContent>
           <div className="flex max-w-80 flex-col gap-3 break-words px-1 py-2.5 md:min-w-52">
             <div className="flex items-center justify-between gap-2">
-              <Link to={`/users/${user.username}`}>
+              <Link to={`/users/${user?.email}`}>
                 <Avatar>
-                  <AvatarImage src="https://github.com/shadcn.png" />
-                  <AvatarFallback>CN</AvatarFallback>
+                  <AvatarImage src={user?.picture} />
+                  <AvatarFallback>{user?.email.slice(0, 2).toUpperCase()}</AvatarFallback>
                 </Avatar>
               </Link>
             </div>
             <div>
-              <Link to={`/users/${user.username}`}>
+              <Link to={`/users/${user?.email}`}>
                 <div className="text-lg font-semibold hover:underline">
-                  {user.displayName}
+                  {user?.full_name}
                 </div>
-                <div className="text-muted-foreground">@{user.username}</div>
+                <div className="text-muted-foreground">@{user?.email}</div>
               </Link>
             </div>
           </div>

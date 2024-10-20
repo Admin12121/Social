@@ -32,7 +32,7 @@ export default function Post({ post }: PostProps) {
     <article className="group/post space-y-3 rounded-2xl bg-card p-5 shadow-sm">
       <div className="flex justify-between gap-3">
         <div className="flex flex-wrap gap-3">
-          <UserTooltip user={post.profiles.email}>
+          <UserTooltip user={post.profiles}>
             <Link to={`/users/${post.profiles.email}`}>
               <Avatar>
                 <AvatarImage src={post.profiles.picture} />
@@ -43,7 +43,7 @@ export default function Post({ post }: PostProps) {
             </Link>
           </UserTooltip>
           <div>
-            <UserTooltip user={post.profiles.email}>
+            <UserTooltip user={post.profiles}>
               <Link
                 to={`/users/${post.profiles.email}`}
                 className="block font-medium hover:underline"
@@ -146,7 +146,7 @@ export const Reposted = (data: any) => {
     <article className="group/post space-y-3 rounded-2xl bg-card p-5 shadow-sm">
       <div className="flex justify-between gap-3">
         <div className="flex flex-wrap gap-3">
-          <UserTooltip user={post.profiles.email}>
+          <UserTooltip user={post.profiles}>
             <Link to={`/users/${post.profiles.email}`}>
               <Avatar>
                 <AvatarImage src={post.profiles.picture} />
@@ -157,7 +157,7 @@ export const Reposted = (data: any) => {
             </Link>
           </UserTooltip>
           <div>
-            <UserTooltip user={post?.profiles?.email}>
+            <UserTooltip user={post?.profiles}>
               <Link
                 to={`/users/${post?.profiles?.email}`}
                 className="block font-medium hover:underline"
@@ -184,7 +184,7 @@ export const Reposted = (data: any) => {
       <article className="cursor-pointer group/post space-y-3 rounded-2xl bg-background p-5 shadow-sm ">
         <div className="flex justify-between gap-3">
           <div className="flex flex-wrap gap-3">
-            <UserTooltip user={post.Posts.profiles.email}>
+            <UserTooltip user={post.Posts.profiles}>
               <Link to={`/users/${post.Posts.profiles.email}`}>
                 <Avatar>
                   <AvatarImage src={post.Posts.profiles.picture} />
@@ -195,7 +195,7 @@ export const Reposted = (data: any) => {
               </Link>
             </UserTooltip>
             <div>
-              <UserTooltip user={post.Posts.profiles.email}>
+              <UserTooltip user={post.Posts.profiles}>
                 <Link
                   to={`/users/${post.Posts.profiles.email}`}
                   className="block font-medium hover:underline"

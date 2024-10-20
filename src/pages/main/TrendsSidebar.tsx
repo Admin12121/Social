@@ -43,7 +43,7 @@ function WhoToFollow() {
         <div key={user.id} className="flex items-center justify-between gap-3">
           <UserTooltip user={user}>
             <Link
-              to={`/users/${user?.full_name}`}
+              to={`/users/${user?.email}`}
               className="flex items-center gap-3"
             >
               <Avatar>
