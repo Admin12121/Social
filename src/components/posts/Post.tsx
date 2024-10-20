@@ -177,6 +177,7 @@ export const Reposted = (data: any) => {
         {post?.profiles?.email === user?.email && (
           <PostMoreButton
             post={post.Posts}
+            repost={true}
             className="opacity-0 transition-opacity group-hover/post:opacity-100"
           />
         )}

@@ -12,10 +12,12 @@ import DeletePostDialog from "./DeletePostDialog";
 interface PostMoreButtonProps {
   post: any;
   className?: string;
+  repost?:boolean;
 }
 
 export default function PostMoreButton({
   post,
+  repost=false,
   className,
 }: PostMoreButtonProps) {
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
@@ -38,6 +40,7 @@ export default function PostMoreButton({
         </DropdownMenuContent>
       </DropdownMenu>
       <DeletePostDialog
+        repost={repost}
         post={post}
         open={showDeleteDialog}
         onClose={() => setShowDeleteDialog(false)}

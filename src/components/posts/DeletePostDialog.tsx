@@ -16,11 +16,13 @@ import { usePosts } from "@/pages/main/_components/postProvider";
 interface DeletePostDialogProps {
   post: any;
   open: boolean;
+  repost?: boolean;
   onClose: () => void;
 }
 
 export default function DeletePostDialog({
   post,
+  repost,
   open,
   onClose,
 }: DeletePostDialogProps) {
@@ -29,8 +31,9 @@ export default function DeletePostDialog({
   const  deletePost = async (postId : number) => {
     setLoading(true); 
     try {
+      const tableName = repost ? 'repostead' : 'Posts';
       const { data, error } = await supabase
-        .from('Posts')
+        .from(tableName)
         .delete()
         .eq('id', postId); 
   
