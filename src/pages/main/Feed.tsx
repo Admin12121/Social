@@ -1,7 +1,7 @@
 import PostEditor from "@/components/posts/editor/PostEditor";
 import TrendsSidebar from "./TrendsSidebar";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-// import FollowingFeed from "./_components/FollowingFeed";
+import FollowingFeed from "./_components/FollowingFeed";
 import ForYouFeed from "./_components/ForYouFeed";
 
 const Content = () => {
@@ -21,7 +21,7 @@ const Content = () => {
           <TabsContent value="for-you">
             <ForYouFeed />
           </TabsContent>
-          <TabsContent value="following">{/* <FollowingFeed /> */}</TabsContent>
+          <TabsContent value="following"><FollowingFeed /></TabsContent>
         </Tabs>
       </div>
       <TrendsSidebar />
