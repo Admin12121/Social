@@ -23,4 +23,4 @@ export const authRoutes = [
     "active-account/:username",
 ];
 
-export const Default_Login_Redirect = "/dashboard";
+export const Default_Login_Redirect = "/";

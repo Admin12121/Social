@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Auth } from "@supabase/auth-ui-react";
 import { ThemeSupa } from "@supabase/auth-ui-shared";
 import { useNavigate } from "react-router-dom";
@@ -7,13 +8,21 @@ import supabase from "@/api/feature/sessionProvider"
 
 const SignInForm = () => {
   const route = useNavigate();
-  supabase.auth.onAuthStateChange(async (event) => {
-    if (event !== "SIGNED_OUT") {
-      route("/login");
-    } else {
-      route("/");
-    }
-  });
+
+  useEffect(() => {
+    const { data: { subscription } } = supabase.auth.onAuthStateChange(
+      async (event) => {
+        if (event !== "SIGNED_OUT") {
+          route("/login");
+        } else {
+          route("/");
+        }
+      }
+    );
+    return () => {
+      subscription.unsubscribe();
+    };
+  }, [route]);
 
   return (
     <>

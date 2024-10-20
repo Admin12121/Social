@@ -1,6 +1,7 @@
 import { lazy, Suspense } from "react";
 import BackdropGradient from "@/components/global/backdrop-gradient";
 import GlassCard from "@/components/global/glass-card";
+import Spinner from "@/components/ui/spinner";
 
 const SignInForm = lazy(() => import("@/components/forms/sign-in"));
 
@@ -13,7 +14,7 @@ const Login = () => {
           container="flex flex-col items-center"
         >
           <GlassCard className="xs:w-full md:w-7/12 lg:w-5/12 xl:w-4/12 p-7 mt-16 overflow-hidden relative">
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<Spinner/>}>
               <SignInForm />
             </Suspense>
           </GlassCard>
